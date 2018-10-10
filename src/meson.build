@@ -23,6 +23,13 @@ yaml_glib_lib = library(
     install_dir: [true, true, true]
 )
 
+yaml_glib_dep = declare_dependency(
+    link_with : yaml_glib_lib,
+    dependencies : [
+        yaml_glib_deps,
+    ]
+)
+
 install_data(
     'yaml-0.1.vapi',
     install_dir : 'share/vala/vapi/'
